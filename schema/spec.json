@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GIX Schema",
+  "description": "GIS layers transformation definition.",
+  "type": "object",
+  "additionalProperties": false,
+  "$comment": "",
+  "properties": {
+    "apiVersion": {
+      "description": "Specify which version of the GIX schema API to apply.",
+      "examples": [ "gix.io/v1-beta" ],
+      "type": "string"
+    },
+    "kind": {
+      "description": "",
+      "examples": [ "Layers" ],
+      "type": "string"
+    },
+    "meta": { "$ref": "#/$defs/meta" },
+    "layers": {
+      "type": "array",
+      "description": "Layers represent the root collection of GIS objects.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "meta": { "$ref": "#/$defs/meta" },
+          "format": {
+            "description": "Layer format is used to interpret the document.",
+            "type": "string",
+            "examples": [ "geojson", "topojosn" ],
+            "enums": [ "geojson", "topojson" ],
+            "default": "geojson"
+          },
+          "layers": {
+              "type": "array",
+              "items": { "$ref": "#/properties/layers"}
+          },
+          "schemaType": {
+            "type": "string",
+            "description": "When specified this propery accepts any schema \"type\" as defined at Schema.org and are use to enforce or validate the properties of provided shapes."
+          },
+          "visible": {
+            "type": "boolean",
+            "description": "Visibility state is provided to editors and visualization tools. ",
+            "default": "true"
+          },
+          "document": {
+            "$ref": "#/$defs/geojson"
+          }
+        }
+      }
+    }
+  },
+  "required": [ "kind", "layers" ],
+  "$defs": {
+    "meta": {
+      "description": "Meta data is used to provide context from this document to IDE's.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Naming documents provides editors with shortcuts for contextual output like file names.",
+          "default": ""
+        },
+        "labels": {
+          "type": "array",
+          "description": "Labels can be used describe or denote aspects of this document programatically.",
+          "examples": [ "1979-01-01", "dev", "topography"],
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": "string",
+          "description": "Describing this document is helpful to collaborators consuming its content programatically."
+        }
+      }    
+    },
+    "geojson": {
+      "type": "object",
+      "$ref": "https://geojson.org/schema/GeoJSON.json",
+      "default": []
+    }
+  }
+}

@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=./schema/spec.json
+apiVersion: gix.io/v1-beta
+kind: Layers
+meta: 
+  name: "GIX"
+  labels: ['fr', 'wine-maps']
+  description: "A GIS project to map the viticulture areas of France."
+layers:
+  - meta:
+      name: "French Wine Regions"
+      labels: [ "france", "wine" ]
+    format: geojson,
+    schemaType: "Winery"
+    document: {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [125.6, 10.1]
+      }
+    }
