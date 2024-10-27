@@ -1,5 +1,20 @@
-# Open GIX
+# OpenGIX Schema Documentation
 
-Open [GIX](## "Geographical Information Transformer") is a simple file format for working with GIS layers in the [Open GIS Editor]().
+This repository tracks changes for the OpenGIX Shchema specification.
 
-Use [schema/spec.json](schema/spec.json) to enforce shape compliance in `.yaml`, `*.gix.yaml` and `.gisl` files.
+OpenGIX organizes complex data-imbued geometry into geospacial layers to enable interactivity in maps and graphs. Visit https://opengix.org to learn more about the OpenGIX project.
+
+## Quickstart
+
+Import the schema definition as the first line item in your `.yaml` project.
+
+```yaml
+# yaml-language-server: $schema=https://github.com/OpenGIX/schema/blob/latest/spec/gix.json
+```
+
+## Resources
+
+- [OpenGIX Getting Starged Guide](https://opengix.org/getting-started)
+- [OpenGIX Schema API Docs](/docs/api)
+- [Contributing]()
+- [Changelog](/CHANGELOG)

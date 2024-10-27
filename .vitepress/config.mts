@@ -2,10 +2,14 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "OpenGIX / API Docs",
+  title: "OpenGIX / Schema Docs",
   description: "OpenGIX schema API documentation.",
 
   cleanUrls: true,
+
+  // srcDir: "/docs",
+
+  rewrites: { "/": "README" },
 
   head: [
     [
@@ -22,16 +26,25 @@ export default defineConfig({
     logo: "https://github.com/OpenGIX/opengix.github.io/blob/main/docs/public/images/logo-bg.png?raw=true",
     nav: [
       { text: "OpenGIX", link: "https://opengix.org" },
-      { text: "Contribute", link: "https://opengix.org" },
-      { text: "README.md", link: "../README.md" },
+      // { text: "CHANGELOG.md", link: "README" },
+      { text: "README.md", link: "README" },
       {
         text: "v0.0.1-alpha",
-        link: "/",
+        link: "/docs/api",
       },
     ],
+
+    externalLinkIcon: true,
 
     socialLinks: [
       { icon: "github", link: "https://github.com/OpenGIX/schema" },
     ],
+
+    footer: {
+      copyright:
+        "Copyright © " +
+        new Date().getFullYear() +
+        ' An <a href="https://openworkgroup.org" title="Visit the Open Working Group website." target="_blank">Open Working Group</a> project.',
+    },
   },
 });
