@@ -7,8 +7,6 @@ export default defineConfig({
 
   cleanUrls: true,
 
-  // srcDir: "/docs",
-
   // rewrites: { "/": "README" },
 
   head: [
