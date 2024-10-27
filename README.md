@@ -16,5 +16,5 @@ Import the schema definition as the first line item in your `.yaml` project.
 
 - [OpenGIX Getting Starged Guide](https://opengix.org/getting-started)
 - [OpenGIX Schema API Docs](/docs/api)
-- [Contributing]()
+- [Contributing](https://opengix.org/contribute#schema)
 - [Changelog](/CHANGELOG)

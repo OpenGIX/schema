@@ -9,7 +9,7 @@ export default defineConfig({
 
   // srcDir: "/docs",
 
-  rewrites: { "/": "README" },
+  // rewrites: { "/": "README" },
 
   head: [
     [
