@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# OpenGIX Schema API
+# Schema API
 
 Example implementation
 
