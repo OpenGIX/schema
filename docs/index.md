@@ -28,26 +28,11 @@ layers:
       }
 ```
 
-## $schema
+## apiVersion
 
-```json
-"$schema": "https://json-schema.org/draft/2020-12/schema",
-...
-```
+### description
 
-## title
-
-## description
-
-## type
-
-## additionalProperties
-
-## $comment
-
-## properties
-
-### apiVersion
+Type: `string`
 
 VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
 
@@ -77,12 +62,10 @@ export default {
 }
 ```
 
-### kind
+## kind
 
-### meta
+## meta
 
 Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
 
-### layers
-
-#### Test
+## layers
