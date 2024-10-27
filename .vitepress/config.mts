@@ -7,7 +7,7 @@ export default defineConfig({
 
   cleanUrls: true,
 
-  // rewrites: { "/": "README" },
+  rewrites: { "/": "README" },
 
   head: [
     [
